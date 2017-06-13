@@ -16,6 +16,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Activity that performs the search -->
+        <activity android:name=".SearchableActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+        <!-- Activity that pulls up the search bar to send to SearchableActivity -->
+        <activity android:name=".UserSearchActivity">
+            <meta-data android:name="android.app.user_search"
+                android:value=".SearchableActivity"/>
+        </activity>
     </application>
 
 </manifest>
